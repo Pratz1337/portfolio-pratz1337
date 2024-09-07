@@ -233,6 +233,7 @@ export default function Portfolio() {
     { name: 'MATLAB', imageURL: '/images/matlab.svg' }
   ]
   
+
   const projects = [
     {
       title: 'Gender-Classification-Model-for-Indian-Faces',
@@ -242,7 +243,7 @@ export default function Portfolio() {
     },
     {
       title: 'Symptom Sage',
-      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA'24 Hackathon.",
+      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA&apos;24 Hackathon.",
       technologies: ['Tensorflow', 'GCloud', 'Python', 'Flask', 'JavaScript'],
       link: 'https://github.com/Pratz1337/Symptom_Sage',
     },
@@ -357,16 +358,16 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="md:w-1/2">
-            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-              Hello! I'm Prathmesh Sayal, a passionate learner with a strong foundation in education.
-              Currently, I am working in the field of Python, Web Development and
-              AI-powered applications to exploring the potential of blockchain technology, I'm constantly 
-              seeking new challenges and opportunities to grow.
-            </p>
-            <p className="text-lg leading-relaxed mt-4 text-gray-600 dark:text-gray-300">
-              When I'm not immersed in lines of code, you can find me participating in hackathons, 
-              contributing to open-source & personal projects.
-              Feel free to reach out if you're interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
+    <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+      Hello! I&apos;m Prathmesh Sayal, a passionate learner with a strong foundation in education.
+      Currently, I am working in the field of Python, Web Development and
+      AI-powered applications to exploring the potential of blockchain technology, I&apos;m constantly 
+      seeking new challenges and opportunities to grow.
+    </p>
+    <p className="text-lg leading-relaxed mt-4 text-gray-600 dark:text-gray-300">
+      When I&apos;m not immersed in lines of code, you can find me participating in hackathons, 
+      contributing to open-source & personal projects.
+      Feel free to reach out if you&apos;re interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
             </p>
           </div>
         </div>
