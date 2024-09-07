@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState, useRef, useEffect } from 'react'
 import { motion,useScroll,useTransform } from 'framer-motion'
-import { Code, Database, Palette, ChevronLeft, ChevronRight, Cloud } from 'lucide-react'
+import {  ChevronLeft, ChevronRight, Cloud } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { GithubIcon, Linkedin, Mail,  ExternalLink, Menu } from 'lucide-react'
 interface Skill {
