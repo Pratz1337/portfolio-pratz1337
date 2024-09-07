@@ -22,7 +22,10 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => setPosition({ x: e.clientX, y: e.clientY })
-    const updateCursorType = () => setIsPointer(window.getComputedStyle(document.elementFromPoint(position.x, position.y)).cursor === 'pointer')
+    const updateCursorType = () => {
+      const element = document.elementFromPoint(position.x, position.y)
+      setIsPointer(element ? window.getComputedStyle(element).cursor === 'pointer' : false)
+    }
 
     window.addEventListener('mousemove', updatePosition)
     window.addEventListener('mouseover', updateCursorType)
@@ -121,79 +124,15 @@ const LineBackground = () => {
 
   return <canvas ref={canvasRef} className="fixed inset-0 z-0" />
 }
-const SkillsVisualization = ({ skills }) => {
-  const scrollRef = useRef(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
 
-  const scroll = (direction) => {
-    const container = scrollRef.current
-    if (container) {
-      const scrollAmount = direction === 'left' ? -200 : 200
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-    }
-  }
-
-  const handleScroll = () => {
-    const container = scrollRef.current
-    if (container) {
-      setCanScrollLeft(container.scrollLeft > 0)
-      setCanScrollRight(container.scrollLeft < container.scrollWidth - container.clientWidth)
-    }
-  }
-
-  useEffect(() => {
-    const container = scrollRef.current
-    if (container) {
-      container.addEventListener('scroll', handleScroll)
-      return () => container.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  return (
-    <div className="relative w-full">
-      <div 
-        ref={scrollRef} 
-        className="flex overflow-x-auto space-x-4 py-4 scrollbar-hide"
-      >
-        {skills.map((skill, index) => (
-          <motion.div
-            key={skill.name}
-            className="flex-shrink-0 w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center text-gray-800 font-bold"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            <div className="text-center">
-              {React.createElement(skill.icon, { size: 32, className: "mx-auto mb-2" })}
-              <span>{skill.name}</span>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-      <Button
-        variant="outline"
-        size="icon"
-        className={`absolute left-0 top-1/2 transform -translate-y-1/2 ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : ''}`}
-        onClick={() => scroll('left')}
-        disabled={!canScrollLeft}
-      >
-        <ChevronLeft className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="outline"
-        size="icon"
-        className={`absolute right-0 top-1/2 transform -translate-y-1/2 ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : ''}`}
-        onClick={() => scroll('right')}
-        disabled={!canScrollRight}
-      >
-        <ChevronRight className="h-4 w-4" />
-      </Button>
-    </div>
-  )
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
 }
-const ProjectCard = ({ project }) => {
+
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <motion.div
       className="bg-white rounded-lg p-6 shadow-lg"
@@ -264,17 +203,17 @@ export default function Portfolio() {
   const yPosAnim = useTransform(scrollYProgress, [0, 1], [0, 100])
 
   const skills: Skill[] = [
-    { name: 'React', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s' },
-    { name: 'Python', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png' },
-    { name: 'Next.JS', imageUrl: 'https://images.ctfassets.net/c63hsprlvlya/IacLLeOBR5WCvdCPqKuff/6860b5cc464c4f54703a2befa3f706b4/nextjs3.webp' },
-    { name: 'C', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png' },
-    { name: 'C++', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg' },
-    { name: 'JavaScript', imageUrl: 'https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png' },
-    { name: 'Node.js', imageUrl: 'https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png' },
-    { name: 'Tensorflow', imageUrl: 'https://pbs.twimg.com/profile_images/1103339571977248768/FtFnqC38_400x400.png' },
-    { name: 'Flask', imageUrl: 'https://play-lh.googleusercontent.com/keVVojxW-b11NTKWZg8GulfLlhqBpATvqGFViblYsI0fxW_8a0sIPgyRlB94Gu1AQMY' },
-    { name: 'GCloud', imageUrl: 'https://static-00.iconduck.com/assets.00/google-cloud-icon-2048x1646-7admxejz.png' },
-    { name: 'MATLAB', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/800px-Matlab_Logo.png' },
+    { name: 'React', imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s' },
+    { name: 'Python', imageURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png' },
+    { name: 'Next.JS', imageURL: 'https://images.ctfassets.net/c63hsprlvlya/IacLLeOBR5WCvdCPqKuff/6860b5cc464c4f54703a2befa3f706b4/nextjs3.webp' },
+    { name: 'C', imageURL: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png' },
+    { name: 'C++', imageURL: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg' },
+    { name: 'JavaScript', imageURL: 'https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png' },
+    { name: 'Node.js', imageURL: 'https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png' },
+    { name: 'Tensorflow', imageURL: 'https://pbs.twimg.com/profile_images/1103339571977248768/FtFnqC38_400x400.png' },
+    { name: 'Flask', imageURL: 'https://play-lh.googleusercontent.com/keVVojxW-b11NTKWZg8GulfLlhqBpATvqGFViblYsI0fxW_8a0sIPgyRlB94Gu1AQMY' },
+    { name: 'GCloud', imageURL: 'https://static-00.iconduck.com/assets.00/google-cloud-icon-2048x1646-7admxejz.png' },
+    { name: 'MATLAB', imageURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/800px-Matlab_Logo.png' },
   ]
   
   const projects = [
@@ -309,12 +248,12 @@ export default function Portfolio() {
         whileHover={{ scale: 1.12 }}
       >
         {!imageError ? (
-          <img 
-            src={skill.imageUrl} 
-            alt={`${skill.name} logo`} 
-            className="w-20 h-20 object-contain mb-2"
-            onError={() => setImageError(true)}
-          />
+        <img 
+          src={skill.imageURL} 
+          alt={`${skill.name} logo`} 
+          className="w-20 h-20 object-contain mb-2"
+          onError={() => setImageError(true)}
+        />
         ) : (
           <div className="w-20 h-20 flex items-center justify-center bg-gray-200 rounded-full mb-2">
             <span className="text-2xl font-bold text-gray-400">{skill.name[0]}</span>
