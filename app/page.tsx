@@ -359,15 +359,15 @@ export default function Portfolio() {
           </div>
           <div className="md:w-1/2">
     <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-      Hello! I';m Prathmesh Sayal, a passionate learner with a strong foundation in education.
+      Hello! I&apos;m Prathmesh Sayal, a passionate learner with a strong foundation in education.
       Currently, I am working in the field of Python, Web Development and
-      AI-powered applications to exploring the potential of blockchain technology, I';m constantly 
+      AI-powered applications to exploring the potential of blockchain technology, I am constantly 
       seeking new challenges and opportunities to grow.
     </p>
     <p className="text-lg leading-relaxed mt-4 text-gray-600 dark:text-gray-300">
-      When I';m not immersed in lines of code, you can find me participating in hackathons, 
+      When I am not immersed in lines of code, you can find me participating in hackathons, 
       contributing to open-source & personal projects.
-      Feel free to reach out if you';re interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
+      Feel free to reach out if you are interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
             </p>
           </div>
         </div>
