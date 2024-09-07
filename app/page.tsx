@@ -86,27 +86,27 @@ const LineBackground = () => {
     const animate = () => {
       requestAnimationFrame(animate)
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-
+    
       for (let i = 0; i < particleCount; i++) {
-        let particle = particles[i]
+        const particle = particles[i]
         particle.x += particle.directionX
         particle.y += particle.directionY
-
+    
         if (particle.x < 0 || particle.x > canvas.width) particle.directionX *= -1
         if (particle.y < 0 || particle.y > canvas.height) particle.directionY *= -1
-
+    
         ctx.beginPath()
         ctx.moveTo(particle.x, particle.y)
         ctx.lineTo(particle.x + particle.directionX * 50, particle.y + particle.directionY * 50)
         ctx.strokeStyle = 'rgba(0, 0, 0, 0.115)'
         ctx.stroke()
-
+    
         for (let j = i + 1; j < particleCount; j++) {
-          let particle2 = particles[j]
-          let dx = particle.x - particle2.x
-          let dy = particle.y - particle2.y
-          let distance = Math.sqrt(dx * dx + dy * dy)
-
+          const particle2 = particles[j]
+          const dx = particle.x - particle2.x
+          const dy = particle.y - particle2.y
+          const distance = Math.sqrt(dx * dx + dy * dy)
+    
           if (distance < 150) {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
@@ -117,6 +117,7 @@ const LineBackground = () => {
         }
       }
     }
+    
 
     animate()
 
