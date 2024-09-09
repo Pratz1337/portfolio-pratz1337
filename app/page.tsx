@@ -236,7 +236,7 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Gender-Classification-Model-for-Indian-Faces',
+      title: 'Gender Classification Model for Indian Faces',
       description: 'A deep learning model for gender classification trained specifically on Indian faces. Uses TensorFlow and Keras to predict male or female with high accuracy and confidence scores.',
       technologies: ['NumPy', 'Python', 'TensorFlow'],
       link: 'https://github.com/Pratz1337/Gender-Classification-Model-for-Indian-Faces',
