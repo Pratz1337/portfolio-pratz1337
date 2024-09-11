@@ -436,8 +436,7 @@ export default function Portfolio() {
           </a>
         </div>
         <p className='text-gray-600 dark:text-gray-400 line-clamp-4 tracking-wide'>Contact Me ^^</p>
-         <a href='http://www.freevisitorcounters.com'>more on freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=14942c666b6035902d1706df11a4796f11fa1279'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1233199/t/2"></script>
+         
       </footer>
     </div>
   )
