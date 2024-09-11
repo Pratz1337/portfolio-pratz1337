@@ -311,15 +311,6 @@ export default function Portfolio() {
     }
   }, [])
 
-  const [visitorCount, setVisitorCount] = useState(0)
-
-  useEffect(() => {
-    // Simulate fetching visitor count from an API or local storage
-    const count = localStorage.getItem('visitorCount') || 0
-    setVisitorCount(Number(count) + 1)
-    localStorage.setItem('visitorCount', String(Number(count) + 1))
-  }, [])
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 overflow-hidden">
       <CustomCursor />
@@ -445,7 +436,7 @@ export default function Portfolio() {
           </a>
         </div>
         <p className='text-gray-600 dark:text-gray-400 line-clamp-4 tracking-wide'>Contact Me ^^</p>
-        <p className='text-gray-600 dark:text-gray-400'>Visitor Count: {visitorCount}</p>
+        
       </footer>
     </div>
   )
