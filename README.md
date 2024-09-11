@@ -1,5 +1,4 @@
-# NOTE- For some Reason Google is thinking its a phishing website :(. Just pass this warning and you can safely visit the portfolio, I am currently working on fixing this bug. Thanks.
-PS- Proper Readme.md SOON
+### Fixed all the SEO related issues, hope it works fine. 
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
