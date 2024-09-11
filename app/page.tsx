@@ -236,14 +236,14 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Gender Classification Model for Indian Faces',
+      title: 'Gender-Classification-Model-for-Indian-Faces',
       description: 'A deep learning model for gender classification trained specifically on Indian faces. Uses TensorFlow and Keras to predict male or female with high accuracy and confidence scores.',
       technologies: ['NumPy', 'Python', 'TensorFlow'],
       link: 'https://github.com/Pratz1337/Gender-Classification-Model-for-Indian-Faces',
     },
     {
       title: 'Symptom Sage',
-      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA'24 Hackathon.",
+      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA&apos;24 Hackathon.",
       technologies: ['Tensorflow', 'GCloud', 'Python', 'Flask', 'JavaScript'],
       link: 'https://github.com/Pratz1337/Symptom_Sage',
     },
@@ -311,6 +311,15 @@ export default function Portfolio() {
     }
   }, [])
 
+  const [visitorCount, setVisitorCount] = useState(0)
+
+  useEffect(() => {
+    // Simulate fetching visitor count from an API or local storage
+    const count = localStorage.getItem('visitorCount') || 0
+    setVisitorCount(Number(count) + 1)
+    localStorage.setItem('visitorCount', String(Number(count) + 1))
+  }, [])
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 overflow-hidden">
       <CustomCursor />
@@ -343,7 +352,7 @@ export default function Portfolio() {
           style={{ y: yPosAnim }}
           className="absolute inset-0 bg-gray-100 dark:bg-gray-800 opacity-50 skew-y-6 -z-10"
         />
-        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">About Me</h2>
+        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">ABOUT ME</h2>
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <div className="relative w-64 h-64 mx-auto">
@@ -361,20 +370,20 @@ export default function Portfolio() {
     <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
       Hello! I&apos;m Prathmesh Sayal, a passionate learner with a strong foundation in education.
       Currently, I am working in the field of Python, Web Development and
-      AI-powered applications to exploring the potential of blockchain technology, I am constantly 
+      AI-powered applications to exploring the potential of blockchain technology, I&apos;m constantly 
       seeking new challenges and opportunities to grow.
     </p>
     <p className="text-lg leading-relaxed mt-4 text-gray-600 dark:text-gray-300">
-      When I am not immersed in lines of code, you can find me participating in hackathons, 
+      When I&apos;m not immersed in lines of code, you can find me participating in hackathons, 
       contributing to open-source & personal projects.
-      Feel free to reach out if you are interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
+      Feel free to reach out if you&apos;re interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
             </p>
           </div>
         </div>
       </section>
 
       <section id="skills" className="py-20 px-4 md:px-20 relative">
-        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">My Skills</h2>
+        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">MY SKILLS</h2>
         <div className="relative w-full">
           <div 
             ref={scrollRef} 
@@ -436,7 +445,7 @@ export default function Portfolio() {
           </a>
         </div>
         <p className='text-gray-600 dark:text-gray-400 line-clamp-4 tracking-wide'>Contact Me ^^</p>
-         
+        <p className='text-gray-600 dark:text-gray-400'>Visitor Count: {visitorCount}</p>
       </footer>
     </div>
   )
