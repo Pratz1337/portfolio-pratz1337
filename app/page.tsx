@@ -373,37 +373,37 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="skills" className="py-20 px-4 md:px-20 relative">
-        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">MY SKILLS</h2>
-        <div className="relative w-full">
+      <section id="skills" className="py-20 px-4 md:px-20 relative scrollbar-hide ">
+        <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white scrollbar-hide ">MY SKILLS</h2>
+        <div className="relative w-full scrollbar-hide ">
           <div 
-            ref={scrollRef} 
-            className="flex overflow-x-auto space-x-4 py-4 scrollbar-hide"
-          >
-            {skills.map((skill) => (
-              <SkillCard key={skill.name} skill={skill} />
-            ))}
-          </div>
+  ref={scrollRef} 
+  className="flex overflow-x-auto space-x-4 py-4 hide-scrollbar"
+>
+  {skills.map((skill) => (
+    <SkillCard key={skill.name} skill={skill} />
+  ))}
+</div>
           <Button
-            variant="outline"
-            size="icon"
-            className={`absolute left-0 top-1/2 transform -translate-y-1/2 ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : ''}`}
-            onClick={() => scroll('left')}
-            disabled={!canScrollLeft}
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className={`absolute right-0 top-1/2 transform -translate-y-1/2 ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : ''}`}
-            onClick={() => scroll('right')}
-            disabled={!canScrollRight}
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
+  variant="outline"
+  size="icon"
+  className={`absolute left-0 top-1/2 transform -translate-y-1/2 ${!canScrollLeft ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-300`}
+  onClick={() => scroll('left')}
+  disabled={!canScrollLeft}
+  aria-label="Scroll left"
+>
+  <ChevronLeft className="h-4 w-4" />
+</Button>
+<Button
+  variant="outline"
+  size="icon"
+  className={`absolute right-0 top-1/2 transform -translate-y-1/2 ${!canScrollRight ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-300`}
+  onClick={() => scroll('right')}
+  disabled={!canScrollRight}
+  aria-label="Scroll right"
+>
+  <ChevronRight className="h-4 w-4" />
+</Button>
         </div>
       </section>
 
