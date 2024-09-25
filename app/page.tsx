@@ -118,7 +118,6 @@ const LineBackground = () => {
       }
     }
     
-
     animate()
 
     const handleResize = () => {
