@@ -236,7 +236,13 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Gender-Classification-Model-for-Indian-Faces',
+      title: 'guard.ai',
+      description: 'Guard.AI is a cutting-edge solution designed to protect media authenticity from the rising threats of deepfake technology. Our platform leverages advanced decentralized technologies, and user-driven authentication.',
+      technologies: ['Web3', 'Python', 'TensorFlow','Solidity','Next.js'],
+      link: 'https://github.com/Pratz1337/guard.ai',
+    },
+    {
+      title: 'Gender Classification Model for Indian Faces',
       description: 'A deep learning model for gender classification trained specifically on Indian faces. Uses TensorFlow and Keras to predict male or female with high accuracy and confidence scores.',
       technologies: ['NumPy', 'Python', 'TensorFlow'],
       link: 'https://github.com/Pratz1337/Gender-Classification-Model-for-Indian-Faces',
@@ -413,7 +419,7 @@ export default function Portfolio() {
           className="absolute inset-0 opacity-10 -skew-y-6 -z-10"
         />
         <h2 className="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
