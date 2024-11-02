@@ -290,7 +290,7 @@ export default function Portfolio() {
     },
     {
       title: 'Symptom Sage',
-      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA&apos;24 Hackathon.",
+      description: "Intuitive web application designed to detect pneumonia from chest X-rays, generate comprehensive reports pinpointing affected lung areas, and seamlessly connect doctors and patients. This application was awarded first place at the BIT INCEPTRA'24 Hackathon.",
       technologies: ['Tensorflow', 'GCloud', 'Python', 'Flask', 'JavaScript'],
       link: 'https://github.com/Pratz1337/Symptom_Sage',
     },
