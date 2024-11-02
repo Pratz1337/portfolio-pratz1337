@@ -455,9 +455,7 @@ export default function Portfolio() {
               seeking new challenges and opportunities to grow.
             </p>
             <p className="text-lg leading-relaxed mt-4 text-gray-600 dark:text-gray-300">
-      When I&apos;m not immersed in lines of code, you can find me immersed in chats with Kshiraja.
 
-      <br />
       Feel free to reach out if you&apos;re interested in collaboration, networking, or sharing insights within the realm of technology and engineering.
             </p>
           </motion.div>
